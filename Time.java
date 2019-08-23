@@ -1,5 +1,5 @@
 import java.util.*;
-class Time
+class Timedemo
 {
 	int h,m,s;
 	Time()
@@ -33,7 +33,7 @@ class Time
 		System.out.println("seconds= "+h);
 	}
 }
-class Timedemo
+class Time
 {
 	public static void main(String[] args)
 	{
