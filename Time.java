@@ -24,13 +24,14 @@ class Timedemo
 		m=m+b+(s/60);
 		s=s%60;
 		h=h+a+(m/60);
+		m=m%60;
 		h=h%24;
 	}
 	void print()
 	{
 		System.out.println("hour= "+h);
-		System.out.println("min= "+h);
-		System.out.println("seconds= "+h);
+		System.out.println("min= "+m);
+		System.out.println("seconds= "+s);
 	}
 }
 class Time
@@ -54,21 +55,24 @@ class Time
 				{
 					case 1:
 						{
-							Time a=new Time();
+							Timedemo a=new Timedemo();
 							a.currenttime(hh,mm,ss);
 							a.print();
 							break;
 						}
 					case 2:
 						{	
-							Time ob=new Time(hh,mm,ss);
+							Timedemo ob=new Timedemo(hh,mm,ss);
 							ob.print();
 							break;							
 						}
 					case 3:
-					    	{
-					        	Time adv=new Time(hh,mm,ss);
-					        	adv.advance(3,56,77);
+					    	{	System.out.println("Enter hour,minutes,seconds you want to add");
+							int a=in.nextInt();
+							int b=in.nextInt();
+							int c=in.nextInt();							
+					        	Timedemo adv=new Timedemo(hh,mm,ss);
+					        	adv.advance(a,b,c);
 					       	 	adv.print();
 							break;
 					    	}
