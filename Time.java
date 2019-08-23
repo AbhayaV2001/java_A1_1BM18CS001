@@ -57,18 +57,22 @@ class Timedemo
 							Time a=new Time();
 							a.currenttime(hh,mm,ss);
 							a.print();
-							a.advance(1,62,31);
-							a.print();
 							break;
 						}
 					case 2:
 						{	
 							Time ob=new Time(hh,mm,ss);
 							ob.print();
-							ob.advance(1,62,31);
-							ob.print();
 							break;							
 						}
+					case 3:
+					    	{
+					        	Time adv=new Time(hh,mm,ss);
+					        	adv.advance(3,56,77);
+					       	 	adv.print();
+							break;
+					    	}
+
 					default:{
 							System.out.println("Invalid choice:");
 						}
