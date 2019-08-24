@@ -6,7 +6,7 @@ class Student
 	int arrm[];
 	void get_data()
 	{
-		int i,flag=0;
+		int i;
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter name of student");
 		name=sc.next();
@@ -21,13 +21,10 @@ class Student
 			System.out.println("Enter credits in sub  " + (i+1)+":");
 			arrc[i]=sc.nextInt();
 		}
-		if (flag!=1)
+		for(i=0;i<sub;i++)
 		{
-			for(i=0;i<sub;i++)
-			{
-				System.out.println("\n\nEnter marks in sub  " + (i+1)+":");
-				arrm[i]=sc.nextInt();
-			}
+			System.out.println("\n\nEnter marks in sub  " + (i+1)+":");
+			arrm[i]=sc.nextInt();
 		}
 	}
 
