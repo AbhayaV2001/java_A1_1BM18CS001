@@ -67,15 +67,15 @@ class Matrixdemo
 		else
 			System.out.println("Inverse can not b determined");
 	}
-	void singular()
+	boolean singular()
 	{
 		if(determinant()!=0.0)
 		{	
-			System.out.println("Singular");
+			return true;
 		}
 		else 
 		{
-			System.out.println("Not Singular");
+			return false;
 		}
 	}
 	void print_data()
@@ -101,7 +101,10 @@ class Matrix
 		Matrixdemo m2 = new Matrixdemo(m1);
 		float e1 =m1.determinant();
 		System.out.println("Nature of  matrix is :   ");
-		m2.singular();
+		if(m2.singular())
+		System.out.println("Singular");
+		else 
+		System.out.println("Not Singular");
 		System.out.println("Determinant of matrix is :   " + e1);
 		System.out.println("Inverse of matrix is :   ");
 		m2.inverse();
