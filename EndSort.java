@@ -1,31 +1,35 @@
 import java.util.*;
 class EndSort
 {   
-    int arr[10];
+    public static void main(String args[]) 
+    {  
+        Scanner in=new Scanner(System.in);
+        EndSort ob=new Endsort();
+        System.out.println("Enter the numbers of terms");
+        int num=in.nextInt();
+        int arr[]=new int[num];
+        int n1=ob.input(arr,num);
+        
+        System.out.println(ob.minMoves(arr, n1));  
+    }
     int minMoves(int arr[], int n) 
     { 
         int expectedItem = n; 
-        for (int i=n-1; i >= 0; i--) 
+        for (int i=n-1; i>=0; i--) 
         { 
             if (arr[i] == expectedItem) 
                 expectedItem--; 
         } 
         return expectedItem; 
     }
-    void input()
+    int input(int arr[],int no)
     {
         Scanner in=new Scanner(System.in);
-        System.out.println("Enter the number numbers with a space b/w two numbers");
-        do
-        {
+        int i=0;
+        System.out.println("Enter the numbers with a space b/w two numbers");
+        for(i=0;i<no;i++)
             arr[i]=in.nextInt();
-            i++;
-        }while(arr[i]!='/0');
-    void main() 
-    { 
-        int arr[] = {4, 3, 2, 1}; 
-        int n = arr.length/Integer.toString(arr[0]).length(); 
-        System.out.println(minMoves(arr, n));  
+        int n = arr.length/Integer.toString(arr[0]).length();
+        return n;
     }
-}
 }
