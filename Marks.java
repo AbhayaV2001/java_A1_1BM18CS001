@@ -33,7 +33,7 @@ class Student
 		int sum=0,total=0,i,points;
 		for(i=0;i<sub;i++)
 		{
-			if(arrm[i]>=90&&arrm[i]<=1000)
+			if(arrm[i]>=90&&arrm[i]<=100)
 				points =10;
 			else if(arrm[i]>=75&&arrm[i]<=89)
 				points =9;
