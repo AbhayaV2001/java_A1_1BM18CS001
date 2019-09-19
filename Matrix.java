@@ -99,7 +99,7 @@ class Matrix
 	{
 		Matrixdemo m1= new Matrixdemo(2,2);
 		Matrixdemo m2 = new Matrixdemo(m1);
-		float e1 =m1.determinant();
+		float e1 =m2.determinant();
 		System.out.println("Nature of  matrix is :   ");
 		if(m2.singular())
 		System.out.println("Singular");
