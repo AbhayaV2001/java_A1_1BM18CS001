@@ -1,44 +1,57 @@
+
 import java.util.*;
-public class Father
+class WrongAge extends Exception
 {
-  int f_age;
-  Father(int f_age)
+  String s;
+  WrongAge(String n)
   {
-    this.f_age=f_age;
+     s=n;
+  }
+  public String toString()
+  {
+     return s;
   }
 }
-public class Son extends Father
-{ Son()
-  {
-    System.out.println("Enter father age");
-    f_age=in.nextInt();
-    super(f_age);
-  }
-  System.out.println("Enter son age");
-  int s_age=in.nextInt();
-  try {
-          if(s_age==f_age || s_age>f_age)  
-          {
-            throw new WrongAge();
-          }
-  } catch(WrongAge e) {
-    System.out.println("Invalid ages "+e);
-  } 
-}
-public class WrongAge extends Exception
+class Father
 {
-  String details;
-  WrongAge()
+  int age1;
+  Father() throws WrongAge
   {
-    details="Son age and father age not comaptible!";
-  }
-  String toString()
-  {
-    return details;
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter father's age:");
+     age1=sc.nextInt();
+     if(age1<=0)
+        throw new Wrongage("invalid age");
   }
 }
-public class Ex_Demo {
-    public static void main(String[] args) {
-        Son ob=new Son();
+class Son extends Father
+{
+   int age2;
+   Son() throws WrongAge
+   {  
+      super();
+      Scanner sc=new Scanner(System.in);
+      System.out.println("Enter son's age:");
+      age2=sc.nextInt(); 
+      if(age2<0)
+         throw new WrongAge("invalid age");
+      if(age1==age2)
+         throw new WrongAge("Invalid data")
+      if(age1-age2<21)
+         throw new WrongAge("Illegal age difference");
+   }
+}
+class Ex_demo
+{
+    public static void main(String args[])
+    {
+        try
+        {
+             Son s=new Son();
+        }
+        catch(WrongAge e)
+        {
+           System.out.println(e);
+        }
      }
 }
