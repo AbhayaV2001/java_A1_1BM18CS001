@@ -15,7 +15,7 @@ public class Student_pk {
 
     
 
-    Student() {
+    Student_pk() {
 
         System.out.println("Enter Name, USN, Sem");
 
